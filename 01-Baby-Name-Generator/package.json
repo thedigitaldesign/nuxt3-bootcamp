@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "boilerplate": "mkdir assets components layouts middleware pages plugins public store && mkdir -p ./assets/{css,images} && yarn add tailwindcss && yarn add -D @heroicons/vue less-loader less"
+  },
+  "devDependencies": {
+    "@heroicons/vue": "^1.0.6",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "nuxt": "3.0.0-rc.1"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}
