@@ -5,7 +5,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "packages": "yarn add tailwindcss && yarn add -D @heroicons/vue less-loader less",
+    "packages": "yarn add @heroicons/vue && yarn add -D tailwindcss less-loader less",
     "directories": "mkdir assets components layouts middleware pages plugins public store && mkdir -p ./assets/{css,images}",
     "create-files": "touch ./assets/css/tailwind.css ./assets/images/README.md ./components/README.md ./layouts/README.md ./middleware/README.md ./pages/README.md ./plugins/README.md ./public/README.md ./store/README.md",
     "boilerplate": "yarn packages && yarn directories && yarn create-files"
