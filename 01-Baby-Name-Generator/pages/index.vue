@@ -22,6 +22,13 @@ interface Options {
   length: Length
 }
 
+// Alternative
+// const Options = {
+//   gender: Gender,
+//   popularity: Popularity,
+//   length: Length
+// } as const
+
 const options: Options = reactive({
   gender: Gender.GIRL,
   popularity: Popularity.UNIQUE,
