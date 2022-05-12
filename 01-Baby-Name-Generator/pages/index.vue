@@ -17,12 +17,12 @@ enum Length {
 }
 
 interface Options {
-  gender: Gender,
-  popularity: Popularity,
+  gender: Gender
+  popularity: Popularity
   length: Length
 }
 
-// Alternative
+// Alternative to interfaces
 // const Options = {
 //   gender: Gender,
 //   popularity: Popularity,
@@ -35,12 +35,24 @@ const options: Options = reactive({
   length: Length.SHORT
 })
 
-// Alternative
+// Alternative strongly typed object
 // const options = reactive<Options>({
 //   gender: Gender.GIRL,
 //   popularity: Popularity.UNIQUE,
 //   length: Length.SHORT
 // })
+
+const updateGender = (val) => {
+  options.gender = val
+}
+
+const updatePopularity = (val) => {
+  options.popularity = val
+}
+
+const updateLength = (val) => {
+  options.length = val
+}
 </script>
 
 <template>
@@ -52,26 +64,28 @@ const options: Options = reactive({
       <div class="option-container">
         <h4>1) Choose a gender</h4>
         <div class="option-buttons">
-          <button class="option option-left" :class="options.gender === Gender.BOY && `option-active`">Boy</button>
-          <button class="option" :class="options.gender === Gender.UNISEX && `option-active`">Unisex</button>
-          <button class="option option-right" :class="options.gender === Gender.GIRL && `option-active`">Girl</button>
+          <button class="option option-left" :class="options.gender === Gender.BOY && `option-active`" @click="updateGender(Gender.BOY)">Boy</button>
+          <button class="option" :class="options.gender === Gender.UNISEX && `option-active`" @click="updateGender(Gender.UNISEX)">Unisex</button>
+          <button class="option option-right" :class="options.gender === Gender.GIRL && `option-active`" @click="updateGender(Gender.GIRL)">Girl</button>
         </div>
       </div>
       <div class="option-container">
         <h4>2) Choose the name's popularity</h4>
         <div class="option-buttons">
-          <button class="option option-left" :class="options.popularity === Popularity.TRENDY && `option-active`">Trendy</button>
-          <button class="option option-right" :class="options.popularity === Popularity.UNIQUE && `option-active`">Unique</button>
+          <button class="option option-left" :class="options.popularity === Popularity.TRENDY && `option-active`" @click="updatePopularity(Popularity.TRENDY)">Trendy</button>
+          <button class="option option-right" :class="options.popularity === Popularity.UNIQUE && `option-active`" @click="updatePopularity(Popularity.UNIQUE)">Unique</button>
         </div>
       </div>
       <div class="option-container">
         <h4>2) Choose name's length</h4>
         <div class="option-buttons">
-          <button class="option option-left" :class="options.length === Length.LONG && `option-active`">Long</button>
-          <button class="option" :class="options.length === Length.ALL && `option-active`">All</button>
-          <button class="option option-right" :class="options.length === Length.SHORT && `option-active`">Short</button>
+          <button class="option option-left" :class="options.length === Length.LONG && `option-active`" @click="updateLength(Length.LONG)">Long</button>
+          <button class="option" :class="options.length === Length.ALL && `option-active`" @click="updateLength(Length.ALL)">All</button>
+          <button class="option option-right" :class="options.length === Length.SHORT && `option-active`" @click="updateLength(Length.SHORT)">Short</button>
         </div>
       </div>
+
+      <button class="primary">Find names</button>
     </div>
   </div>
 </template>
@@ -112,5 +126,9 @@ h4 {
 
 .option-active {
   @apply bg-purple-300 text-white;
+}
+
+.primary {
+  @apply bg-purple-900 text-white rounded-lg border-none py-3 px-4 mt-6 cursor-pointer;
 }
 </style>
