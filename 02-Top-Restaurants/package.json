@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "packages": "yarn add @heroicons/vue && yarn add -D tailwindcss less-loader less",
+    "directories": "mkdir assets components layouts middleware pages plugins public store && mkdir -p ./assets/{css,images}",
+    "create-files": "touch ./assets/css/tailwind.css ./assets/images/README.md ./components/README.md ./layouts/README.md ./middleware/README.md ./pages/README.md ./plugins/README.md ./public/README.md ./store/README.md",
+    "boilerplate": "yarn packages && yarn directories && yarn create-files"
+  },
+  "devDependencies": {
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "nuxt": "3.0.0-rc.3",
+    "tailwindcss": "^3.0.24"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^1.0.6"
+  }
+}
