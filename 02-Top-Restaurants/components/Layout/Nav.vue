@@ -19,17 +19,17 @@
           </div>
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
-              <a
+              <nuxt-link
                 v-for="item in navigation"
                 :key="item.name"
-                :href="item.href"
+                :to="item.href"
                 :class="[
                   item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                   'px-3 py-2 rounded-md text-sm font-medium'
                 ]"
-                :aria-current="item.current ? 'page' : undefined"
-                >{{ item.name }}</a
-              >
+                :aria-current="item.current ? 'page' : undefined">
+                Foo - {{ item.name }}
+              </nuxt-link>
             </div>
           </div>
         </div>
@@ -108,7 +108,7 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'Restaurant', href: '/restaurant', current: false }
+  { name: 'Restaurants', href: '/restaurants', current: false }
 ]
 </script>
 

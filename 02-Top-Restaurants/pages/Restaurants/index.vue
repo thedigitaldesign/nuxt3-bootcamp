@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+    Restaurant Index
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+    [name] of restaurant
   </div>
 </template>
 
